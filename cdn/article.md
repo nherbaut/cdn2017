@@ -70,10 +70,16 @@ Au-delà d’une réflexion sur les valeurs du cyberespace, à laquelle nous inv
 une première, « code is law », qui tire les conséquences du fait que pour tout système numérique, c’est d’abord sa conception qui régule son fonctionnement ;
 une seconde, « code by law », qui s’interroge sur la capacité du droit à investir ce système afin d’y exercer son pouvoir normateur.
 
+# Code is Law #
 
+Les smarts contract sont généralement écrits à l'aide de langages de programmation non spécialisés [^@dannen2017introducing] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
+On peut concevoir les smart contracts comme l'éxecution de code déterministe ayant comme entrée un état donné de la blockchain et produisant des sorties également inscrites dans la blockchain.
+Entrées et sorties peuvent être considérées comme un ensemble de valeurs rattachées à un compte utilisateur, les contrats permettant de transférer des valeurs d'un compte à un autre.
 
-3 "Code by Law"
-3.1 Réfutation de l'hypothèse du non-droit
+Face aux difficulté de prouver formellement les smarts contracts exprimés dans un langage de programmation spécifique
+
+# Code by Law #
+## Réfutation de l'hypothèse du non-droit ##
 Pour rebondir sur les propositions de Nicolas et envisager quelle pourrait être la réaction du droit face à un Smart Contract, il faut commencer par rappeler que le système juridique cette fois-ci repose sur une loi fondamentale : celle de sa complétude. Au risque de faire du « panjuridisme », et à l’image de la nature qui a horreur du vide, le juriste, le juge, ou n’importe quel autre enquiquineur trouvera toujours des éléments de droit à appliquer à une situation de fait – fût-ce au prix d’une réflexion intense ou du recours à beaucoup d’imagination. Le droit n’est-il pas la plus puissante école de l’imagination nous disait Giraudaux ? (voir Klaus Peter Berger, The creeping codification of the new lex mercatoria, Kluwers, 2nd éd., 2010, p. 290). Pour ne prendre qu’un exemple, des concepts tel que celui de lex numerica ou de lex informatica sont ainsi venus accompagner le développement du commerce électronique.
 Cette capacité inventive du droit, même dans des domaines où l’Etat est a priori peu présent, va directement à l’encontre du sentiment de liberté, voire d’impunité, qui prédomine bien souvent chez les promoteurs du cyberespace.  Les promoteurs de the DAO le définissent ainsi comme un « Paradis libertaire », échappant à tout cadre juridique... dès lors que la communauté formée n’aurait pas formellement d’existence.
 Sans être expert en droit des sociétés, il me semble cependant que la notion de société créée de fait, par exemple, est tout à fait capable de contourner l’absence de personnalité juridique préexistante.
@@ -83,9 +89,12 @@ Lors de travaux menés à bordeaux en 2016 par une équipe pluridisciplinaire, n
 De manière générale, le rapport entre la technologie numérique et le monde juridique est bien souvent biaisé dans les analyses proposées par les tenants des smart contracts. A titre d’exemple, Nick Szabo qui est des plus anciens promoteurs de cette technologie, considère que le contrat est un texte qui implicitement demande à un juge d’ordonner à une partie d’effectuer un paiement ou de livrer une prestation à l’autre sous certaines conditions. C’est une vision franchement très réductrice du contrat : elle prend l’hypothèse problématique de l’inexécution pour en faire l’essence du contrat. Pour reprendre l’analyse de Jean Carbonnier, elle n’envisage la vie du contrat que par la pathologie qui est susceptible de l’atteindre. Or, le Contrat a pour finalité première, à mon sens, de savoir à quoi l’on s’engage, de pouvoir déterminer la teneur de son engagement et les modalités de sa mise en œuvre. Ensuite, cette vision contentieuse du contrat simplifie à l’extrême en prenant un cas très particulier, l’absence d’exécution, comme seule hypothèse de saisine du juge. Bien souvent, l’exécution n’est pas quelque chose de binaire mais un continuum et tout l’enjeu en cas de litige sera d’interpréter le contrat afin de savoir à quoi s’étaient engagées les parties.
 Pour en revenir au Smart Contracts non opposables proposés par Nicolas, je propose d’évoquer certaines des questions que le droit aura certainement à trancher en cas de développement de cette nouvelle technologie contractuelle.
 
-3.2 Adaptation du droit
+## Adaptation du droit ##
 La sécurité juridique, qui est la finalité de la construction juridique, pourrait imposer une intervention en amont et en aval  du déploiement d’un tel contrat. Si vous le voulez bien, je laisserai délibérément la question du lien de rattachement et on supposera par la suite que la compétence étatique est établie pour réguler les smart contracts et trancher les éventuels litiges.
-3.2.A. En amont : je vois quatre points essentiels qui devraient justifier une intervention normative :
+
+### En amont ###
+
+Je vois quatre points essentiels qui devraient justifier une intervention normative :
 Il s’agit premièrement de la question du niveau de preuve de la fiabilité du système proposé. On peut penser que les smart contracts auront vocation à mettre en relation des parties entre lesquelles l’équilibre ne sera pas parfait, et qu’il sera parfois nécessaire de protéger celle qui se trouve en situation de dépendance. Asymétrie d’autant plus à craindre que le langage informatique du code est proprement incompréhensible pour le quidam... Il faut donc non seulement réfléchir au niveau de preuve requis à l’encontre de celui qui propose un smart contract, et par exemple s’interroger sur le recours à la validation formelle -  même si j’ai cru comprendre que c’était difficilement compatible avec l’open source ???,  mais il faut aussi s’interroger sur l’autorité compétente pour apprécier les informations fournies quant à la fiabilité du système et à la sincérité de l’information transmise. L’autorité des marchés financiers, qui veille à la protection de l'épargne et à l'information des investisseurs, ou encore le Mécanisme de surveillance unique mis en place par l’UE depuis la crise financière de 2008 et qui repose sur une mise en réseau de la BCE et des autorités nationales de contrôle prudentiel pourrait servir d’exemple.
 Le modèle des autorités indépendantes en charge de la régulation d’un secteur d’activité me paraît en effet particulièrement adapté dans le cadre d’un domaine ultratechnique. En s’inspirant des mécanismes d’autorisations de mise sur le marché délivrées dans le secteur du médicament ou des variétés végétales par exemple, il est possible d’inventer une procédure de validation ou d’agrément applicable aux Smart Contracts.
 Reste à savoir ensuite sur qui devrait reposer la responsabilité en cas de défaillance du système et à déterminer s’il convient d’envisager une obligation de moyen ou de résultat quant l’exigence de fiabilité...
@@ -97,38 +106,40 @@ Ensuite, il n’est pas inutile de se demander si l’arbitre ne doit pas être 
 Enfin, en quatrième point, je voudrais revenir sur l’hypothèse du vol de clé évoqué par Nicolas comme un risque pour la sécurité des Smart Contracts. Le risque est d’autant plus grand dans le cas de recours par les particuliers à des logiciels de communication avec la blockchain que l’on désigne « wallet ». Ceux-ci stockent en effet l’information et sont susceptibles d’être piratés.
 Pour endiguer ce risque, dans le cadre des monnaies virtuelles, l’Etat de New York a été le premier en 2014 a imposé un mécanisme de licence aux opérateurs du secteur. En vertu de cette « bitlicence », les plates-formes se voient imposer des obligations prudentielles, mais elles doivent également faire la preuve de la solidité de leur système informatique et de l’adoption de protocoles destinés à contrer les tentatives de piratage. Une fois obtenu l’agrément, elles restent tenues à l’obligation de présenter un rapport annuel.
 Une telle construction est tout à fait transposable aux cas d’utilisations de clé pour souscrire ou activer des smart contracts via l’utilisation de Wallet.
- 3.2.B. En aval :
+
+### En aval ###
+
 Si l’intervention ex ante de la règle de droit est de nature à éviter un certain nombre de complications, il n’empêche que l’exécution du Smart Contracts, tout automatique qu’elle soit, peut être source de contestations.
-- Legal enforceability of smart contracts is limited. Work
-is being done [84]) to make the technical rules of smart
-contracts legally enforceable and binding to all parties. Until
-then, what happens if, despite the verifiability of the whole
-process, a transacting entity disputes the outcome of a smart
-contract operation? A way to increase the chances of legal
-enforceability is to include a reference to the actual real-world
-contract in the smart contract, and vice versa. This is a pro-
-cess called ‘‘dual integration’’ [85] and it works as follows:
-(a) deploy the smart contract in question, record its address on
-the blockchain, and include that address in the real contract
-(b) hash the corresponding real-world contract, record its
-hash digest, store the real contract in a safe space (can be
-centralized, or decentralized [86]), (c) send a transaction to
-the smart contract that includes the real contract’s hash in its
-metadata; the contract then stores that piece of information
-in its own, internal database.11 In case of a legal dispute,
-you can point to the hash stored in the smart contract, then
-present the real-world contract (that is uniquely identified
-by that hash) and prove the link between the actions on the
-blockchain and the expected outcome in the physical world.
-Refer to CommonAccord [87] and Legal Markdown [85];
-both tools intend to make the creation of legal ‘‘real-world’’
-and corresponding smart contracts possible, via the use of
-templating systems.
+  - Legal enforceability of smart contracts is limited. Work
+  is being done [84]) to make the technical rules of smart
+  contracts legally enforceable and binding to all parties. Until
+  then, what happens if, despite the verifiability of the whole
+  process, a transacting entity disputes the outcome of a smart
+  contract operation? A way to increase the chances of legal
+  enforceability is to include a reference to the actual real-world
+  cess called ‘‘dual integration’’ [85] and it works as follows:
+  contract in the smart contract, and vice versa. This is a pro-
+  the blockchain, and include that address in the real contract
+  (a) deploy the smart contract in question, record its address on
+  (b) hash the corresponding real-world contract, record its
+  hash digest, store the real contract in a safe space (can be
+  centralized, or decentralized [86]), (c) send a transaction to
+  the smart contract that includes the real contract’s hash in its
+  metadata; the contract then stores that piece of information
+  in its own, internal database.11 In case of a legal dispute,
+  you can point to the hash stored in the smart contract, then
+  present the real-world contract (that is uniquely identified
+  blockchain and the expected outcome in the physical world.
+  by that hash) and prove the link between the actions on the
+  Refer to CommonAccord [87] and Legal Markdown [85];
+  both tools intend to make the creation of legal ‘‘real-world’’
+  and corresponding smart contracts possible, via the use of
+  templating systems.
 → est-ce bien nécessaire ! ? Tjrs cette idée sous-jacente qu’en soit le SC n’est pas un contrat... et reste a-juridique.
 A quoi s’engage-t-on ? à l’output prime ou à l’output prévisible ? Comment rendre opposable l’output ? validation de l’output avant d’être inscrit sur blockchain (avec un output temporaire non-opposable qui va être passer par un autre contrat pour au bout d’un certain délai devenir opposable → possibilité de rétractation)
 Est-ce que ça devient pas un contrat purement potestatif ?*
 
-4. Ouverture
+# Ouverture
 Dans le cas du développement du commerce électronique international, la doctrine a utilisé les concepts de lex electronica  pour désigner l’apparition de normes informelles, de codes de bonnes pratiques, adoptés par les acteurs du secteur généralement regroupés en organisations transnationales plutôt que par les autorités étatiques. Il faut donc s’interroger en conclusion sur le caractère transposable de ce précédent au cas des Smart Contracts. Interrogation d’autant plus nécessaire que l’on observe effectivement dans le cadre d’initiative comme celle d’Hyperledger ou de clause.io une volonté des acteurs du milieu de coopérer pour établir des standards. → opensource : développement d’une stratégie d’occupation par IBM (pouvoir de marché !)
 Techno-legal standards v. organisation privée à l'origine de la standardisation [standardization is one of the many benefits and drivers of open source software development]
 Objectifs dans le recours aux standards (auxquels peut renvoyer la loi): The aim is to produce a technology layer that will advance the transition to legally enforceable smart contracts by incorporating widely accepted standards relating to transactional legal practice, the use of data and distributed ledgers in contracting, and dispute resolution.
