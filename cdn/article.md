@@ -97,9 +97,6 @@ En cas de violation des invariants du CEA, le résultat associé, appelé *résu
 
 ## Procédure d'Arbitrage ##
 
-Les smarts contract sont généralement écrits à l'aide de langages de programmation non spécialisés [@documents:dannen2017introducing] [@documents:androulaki2018hyperledger] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
-On peut concevoir les smart contracts comme l’exécution de code déterministe ayant comme entrée un état donné de la blockchain et produisant des sorties également inscrites dans la blockchain.
-Entrées et sorties peuvent être considérées comme un ensemble de valeurs rattachées à un compte utilisateur, les co
 La procédure d'Arbitrage permet aux parties prenantes de contester les résultats de l'exécution d'un contrat sans altérer les propriété d'immutabilité de la blockchain. En effet, les résultats transactionnels, avant d'être déclaré *opposables* peuvent faire l'objet d'un appel permettant d'aboutir à 3 résultats différents, illustré Figure~\ref{arbitrage_workflow}
 ![Exécution de la procédure d'arbitrage \label{arbitrage_workflow}](arbitrage_workflow.svg){ width=100% }
 * Si aucune partie prenante ne souhaite faire appel de l'exécution initiale du contrat, le mécanisme d'arbitrage contourne la violation des invariants. Les conditions initiales du contrat sont validées et les résultats sont inscrit directement sur la blockchain et sont décrétés *opposables*.
@@ -116,7 +113,7 @@ Afin d'illustrer l'utilisation des CEA et de la procédure d'arbitrage, nous pro
 
 Une entreprise autonome theMcDAO propose la livraison de repas à domicile, directement basé sur la blockchain.
 Le service est basé sur la collaboration de 4 acteurs différents qui vont entrer en jeu pour livrer un hamburger chaud à un client, au meilleur prix.
-Le premier type d'acteur est le client. Celui-ci spécifie le menu de son choix, basé sur la carte d'une franchise de restauration rapide. Il spécifie également le délai de livraison attendu dans une application mobile et procède au paiement dans une devise définie par la blockchain. Les valeurs sont stockée dans le CEA du contrat de livraison de repas, qui préci! M%%%%ù
+Le premier type d'acteur est le client. Celui-ci spécifie le menu de son choix, basé sur la carte d'une franchise de restauration rapide. Il spécifie également le délai de livraison attendu dans une application mobile et procède au paiement dans une devise définie par la blockchain. Les valeurs sont stockée dans le CEA du contrat de livraison de repas, qui précise la répartition des paiement entre entre theMcDAO, le livreur et le restaurateur.
 
 Dans un deuxième temps, la plateforme theMcDAO va choisir, parmi une liste de restaurateurs franchisés, celui qui propose de préparer la commande au meilleur prix et dans les délais impartis.
 Tous les restaurateurs déclarent leurs disponibilité et leur prix en temps réel à la plateforme. Dès lors que la commande est réceptionnée et préparée, le hamburger est placé dans une boite témoin spéciale, qui affiche un QRCode unique lorsque la température du contenant atteint une température inférieure à 40°C. Une fois tous les éléments prêts, le sac de transport est fermé et affiche alors un QRCode unique, flashé par le restaurateur. Celui-ci dépose la commande en attendant que le livreur vienne la chercher.
