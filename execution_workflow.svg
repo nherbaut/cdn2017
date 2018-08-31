@@ -11,8 +11,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="881.06573mm"
-   height="260.24365mm"
-   viewBox="0 0 881.06574 260.24366"
+   height="274.20367mm"
+   viewBox="0 0 881.06574 274.20368"
    version="1.1"
    id="svg4851"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -317,8 +317,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.24748737"
-     inkscape:cx="1688.5334"
-     inkscape:cy="-48.905737"
+     inkscape:cx="2209.7721"
+     inkscape:cy="68.506332"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -481,7 +481,7 @@
          style="stroke-width:0.26458332"
          id="tspan4986-5-2">Résultat opposable</tspan></text>
     <rect
-       style="opacity:1;vector-effect:none;fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:3.68099976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;vector-effect:none;fill:#ffa137;fill-opacity:1;stroke:#000000;stroke-width:3.68099976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4697-8-7-9-8"
        width="161.10577"
        height="41.34428"
@@ -497,7 +497,7 @@
          x="516.43817"
          y="145.16135"
          style="stroke-width:0.26458332"
-         id="tspan4986-5-2-7">Résultat non-opposable</tspan></text>
+         id="tspan4986-5-2-7">Résultat  transactionel</tspan></text>
     <path
        style="opacity:1;vector-effect:none;fill:url(#linearGradient5938);fill-opacity:1;stroke:#000000;stroke-width:3.68099999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
        d="M 431.11995,90.625 481.76874,56.607143"
@@ -716,5 +716,23 @@
          x="91.937912"
          y="174.16512"
          style="stroke-width:0.26458332">CEA</tspan></text>
+    <rect
+       y="170.59824"
+       x="499.41919"
+       height="41.34428"
+       width="161.10579"
+       id="rect4697-8-7-9-8-1"
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.68099976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       id="text4984-3-2-9-5"
+       y="194.19009"
+       x="539.10638"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         id="tspan4986-5-2-7-9"
+         style="stroke-width:0.26458332"
+         y="194.19009"
+         x="539.10638"
+         sodipodi:role="line">Contrat d'appel</tspan></text>
   </g>
 </svg>
