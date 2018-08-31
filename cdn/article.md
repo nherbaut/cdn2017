@@ -52,7 +52,7 @@ Paris les différents essais lancés à grande échelle sur les marchés, l’é
 *The Dao* a été fondé le 30 avril 2016, en tant qu'organisation autonome décentralisée et formait un fond d'investissement piloté directement par ses actionnaires, en fournissant un nouveau business model décentralisé appliqué à l'organisation des entreprises commerciales et organismes sans but lucratif.
 
 Au démarrage de l'activité, il a été techniquement déployé sur la blockchain Ethereum et était dépourvu de structure managériale ou de conseil d’administration. Son code est publié sous licence open-source. Issu d'un financement participatif, il a détenu le record de capitalisation pour ce type de création.
-En Juin 2016, une vulnérabilité dans son code a permis à des utilisateurs malveillants de siphonner un tiers de la valeur du fond.
+En Juin 2016, une vulnérabilité dans son code a permis à des utilisateurs malveillants de détourner un tiers de la valeur du fond [@cites_as_data_source:atzei2017survey].
 
 En Juillet 2016, la communauté Ethereum a décidé de revenir en arrière sur ces transactions délictueuses en les supprimant des ces registres. Dans la controverse, une partie de la communauté, opposée à ce "hard fork" continue de maintenir la blockchain Ethereum dans son état non modifié sous le nom d'Ethereum Classic. Les deux communautés s'opposent de façon quasi philosophique sur ce retour en arrière.
 
@@ -72,11 +72,23 @@ une seconde, « code by law », qui s’interroge sur la capacité du droit à i
 
 # Code is Law #
 
-Les smarts contract sont généralement écrits à l'aide de langages de programmation non spécialisés [^@dannen2017introducing] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
-On peut concevoir les smart contracts comme l'éxecution de code déterministe ayant comme entrée un état donné de la blockchain et produisant des sorties également inscrites dans la blockchain.
+Les smarts contract sont généralement écrits à l'aide de langages de programmation non spécialisés [@documents:dannen2017introducing] [@documents:androulaki2018hyperledger] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
+On peut concevoir les smart contracts comme l’exécution de code déterministe ayant comme entrée un état donné de la blockchain et produisant des sorties également inscrites dans la blockchain.
 Entrées et sorties peuvent être considérées comme un ensemble de valeurs rattachées à un compte utilisateur, les contrats permettant de transférer des valeurs d'un compte à un autre.
 
-Face aux difficulté de prouver formellement les smarts contracts exprimés dans un langage de programmation spécifique
+Face aux difficultés de sécuriser les les smarts contracts par la production de preuves [@cites_as_evidence:bhargavan2016formal] [@cites_as_evidence:hirai2017defining] ou par l'emploi de chasseur de prime [@cites_as_evidence:breidenbach2018enter] pour détecter les exploitations possibles des anomalies des smart-contracts, nous proposons une approche complémentaire basé sur l'encapsulation des smart contracts dans des *containers d'exécution arbitraux* (CEA) possédant différentes propriété que nous allons décrire.
+
+Premièrement, l'exécution du smart contract dans le CEA reste similaires aux smart contacts classiques. Ils accèdent aux même données, et leur résultats sont également stockés dans la blockchain. Tout code exécuté dans le container avec les mêmes conditions initiales doit aboutir au même état de sortie.
+La principale différence entre le contrat exécuté directement dans la blockchain et le contrat rattaché à un CEA est que le CEA attache au contexte d'exécution des smart contract, une série d'invariants concernant les entrées et sorties des contrats.
+Ainsi, le CEA consiste en un  environnement d'exécution de plus haut niveau que le contrat initial, permettant de vérifier si certains invariants exprimables en fonction des paramètres d'entrée et de sortie sont vérifiés lors de l'exécution du contrat.
+Dans le cas nominal, tous les invariants sont satisfaits et le résultat de l'exécution du CEA est directement publié sur la blockchain sans attendre. Dans ce cas, l’exécution du smart contract originel est directement publié sur le blockchain et les transactions afférentes à la consommation des resources des différentes parties prenantes sont définitivement validées.
+En cas de violation des invariants du CEA, le résultat associé, appelé *résultat transactionel*  est publié sur la blockchain, mais il est décrété *non opposable* (celui-ci n'est pas encore définitif, et les ressources générées par ce contrat ne sont pas utilisables dans d'autres contrats). Le *résultat  transactionel* est associé à un nouveau contrat ad-hoc dit *contrat d'appel* permettant aux parties prenantes de les contester dans le cadre d'une *procédure d'arbitrage*.
+
+La procédure d'arbitrage fait appel à
+* **Renoncement à l'appel** Si aucune parties prenantes ne souhaite faire appel de l'exécution initiale du contrat, le mécanisme d'arbitrage contourne la violation des invariants. Les conditions initiales du contrat sont validées et les résultats sont inscrit directement sur la blockchain et sont décrétés *opposables*.
+* **appel invalidant l'exécution du contrat** L'arbitrage peut également invalider l'exécution du contrat. Dans ce cas, le résultat transactionnele est déclarés non écrits, et les ressources dépensées par les acteurs dans le cadre de l'exécution du contrat initial sont restituées.
+* **appel validant l'exécution** Finalement l'arbitrage peut être rendu en conformité avec l'exécution initiale. Dans ce cas, le résultat transactionnel devient un résultat *opposable*.
+
 
 # Code by Law #
 ## Réfutation de l'hypothèse du non-droit ##
