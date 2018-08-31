@@ -85,24 +85,28 @@ Face aux difficultés de sécuriser les smarts contracts par la production de pr
 Premièrement, l'exécution du smart contract dans le CEA reste similaires aux smart contacts classiques. Ils accèdent aux même données, et leur résultats sont également stockés dans la blockchain. Tout code exécuté dans le container avec les mêmes conditions initiales doit aboutir au même état de sortie.
 La principale différence entre le contrat exécuté directement dans la blockchain et le contrat rattaché à un CEA est que le CEA ajoute  une série d'invariants concernant les entrées et sorties des contrats.
 Ainsi, le CEA consiste en un  environnement d'exécution de plus haut niveau que le contrat initial, permettant de vérifier si certains invariants exprimables en fonction des paramètres d'entrée et de sortie sont vérifiés lors de l'exécution du contrat, comme montré sur la Figure~\ref{execution_workflow}.
+![Exécution d'un Smart Sontract encapsulé permettant la vérification des invariants\label{execution_workflow}](execution_workflow.svg){ width=100% }
 Dans le cas nominal, tous les invariants sont satisfaits et le résultat de l'exécution du CEA est directement publié sur la blockchain sans attendre. Dans ce cas, l’exécution du smart contract originel est directement publiée sur la blockchain et les transactions afférentes à la consommation des ressources des différentes parties prenantes sont définitivement validées.
 En cas de violation des invariants du CEA, le résultat associé, appelé *résultat transactionel*  est publié sur la blockchain, mais il est décrété *non opposable* (celui-ci n'est pas encore définitif, et les ressources générées par ce contrat ne sont pas utilisables dans d'autres contrats). Le *résultat  transactionel* est associé à un nouveau contrat ad-hoc dit *contrat d'appel* permettant aux parties prenantes de les contester dans le cadre d'une *procédure d'arbitrage*.
 
 
-![Exécution d'un Smart Sontract encapsulé permettant la vérification des invariants\label{execution_workflow}](execution_workflow.svg){ width=100% }
 
-![Exécution de la procédure d'arbitrage \label{arbitrage_workflow}](arbitrage_workflow.svg){ width=100% }
+
+
 
 
 ## Procédure d'Arbitrage ##
 
+Les smarts contract sont généralement écrits à l'aide de langages de programmation non spécialisés [@documents:dannen2017introducing] [@documents:androulaki2018hyperledger] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
+On peut concevoir les smart contracts comme l’exécution de code déterministe ayant comme entrée un état donné de la blockchain et produisant des sorties également inscrites dans la blockchain.
+Entrées et sorties peuvent être considérées comme un ensemble de valeurs rattachées à un compte utilisateur, les co
 La procédure d'Arbitrage permet aux parties prenantes de contester les résultats de l'exécution d'un contrat sans altérer les propriété d'immutabilité de la blockchain. En effet, les résultats transactionnels, avant d'être déclaré *opposables* peuvent faire l'objet d'un appel permettant d'aboutir à 3 résultats différents, illustré Figure~\ref{arbitrage_workflow}
-
+![Exécution de la procédure d'arbitrage \label{arbitrage_workflow}](arbitrage_workflow.svg){ width=100% }
 * Si aucune partie prenante ne souhaite faire appel de l'exécution initiale du contrat, le mécanisme d'arbitrage contourne la violation des invariants. Les conditions initiales du contrat sont validées et les résultats sont inscrit directement sur la blockchain et sont décrétés *opposables*.
 * Si une partie prenante fait appel à un arbitrage, deux cas de figure peuvent intervenir:  l'arbitrage   peut invalider l'exécution du contrat, jugeant que la violation des invariants est contraire à *l'esprit initial* du contrat. Dans ce cas, le résultat transactionnel est déclaré non écrit, et les ressources dépensées par les parties prenantes dans le cadre de l'exécution du contrat initial sont restituées conformément à la procédure d'arbitrage [^footnote2].
 Dans le cas contraire,l'arbitrage peut être rendu en conformité avec l'exécution initiale. Dans ce cas, le résultat transactionnel devient un résultat *opposable* et est écrit en tant que tel sur la blockchain.
 
-[^footnote2] L'arbitrage pouvant précisé par exemple l'annulation pure et simple des transactions ou l'application de pénalités, amendant le transfert de valeur initial.
+[^footnote2]: L'arbitrage pouvant précisé par exemple l'annulation pure et simple des transactions ou l'application de pénalités, amendant le transfert de valeur initial.
 
 Le CEA joue le rôle dépôt fiduciaire, qui ne procède au déblocage des valeurs que lorsque les résultats du smart contrats deviennent opposables.
 
