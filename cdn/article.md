@@ -97,9 +97,6 @@ En cas de violation des invariants du CEA, le résultat associé, appelé *résu
 
 ## Procédure d'Arbitrage ##
 
-Les smarts contract sont généralement écrits à l'aide de langages de programmation non spécialisés [@documents:dannen2017introducing] [@documents:androulaki2018hyperledger] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
-On peut concevoir les smart contracts comme l’exécution de code déterministe ayant comme entrée un état donné de la blockchain et produisant des sorties également inscrites dans la blockchain.
-Entrées et sorties peuvent être considérées comme un ensemble de valeurs rattachées à un compte utilisateur, les co
 La procédure d'Arbitrage permet aux parties prenantes de contester les résultats de l'exécution d'un contrat sans altérer les propriété d'immutabilité de la blockchain. En effet, les résultats transactionnels, avant d'être déclaré *opposables* peuvent faire l'objet d'un appel permettant d'aboutir à 3 résultats différents, illustré Figure~\ref{arbitrage_workflow}
 ![Exécution de la procédure d'arbitrage \label{arbitrage_workflow}](arbitrage_workflow.svg){ width=100% }
 * Si aucune partie prenante ne souhaite faire appel de l'exécution initiale du contrat, le mécanisme d'arbitrage contourne la violation des invariants. Les conditions initiales du contrat sont validées et les résultats sont inscrit directement sur la blockchain et sont décrétés *opposables*.
