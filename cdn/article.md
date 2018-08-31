@@ -37,11 +37,11 @@ Compte tenu du rôle de plus en plus prépondérant des solutions Blockchain dan
 
 ## Présentation de la blockchain ##
 
-La blockchain est perçue comme un composant d'une architecture logicielle permettant d'atteindre un consensus distribué pour les données transactionnelles sans recourir à un tiers de confiance [@xu2016Blockchain]. Ces systèmes consistent en une base de donnée permettant la lecture et l'ajout d'information sous forme d'une liste d'enregistrements chaînés appelés les blocks. Par construction, les systèmes de blockchain ne peuvent être falsifiés ou modifiés puisque chaque block contient un marqueur temporel couplé à un lien vers le block précédent [@bozic2016tutorial].
+La blockchain est perçue comme un composant d'une architecture logicielle permettant d'atteindre un consensus distribué pour les données transactionnelles sans recourir à un tiers de confiance [@xu2016Blockchain]. Ces systèmes consistent en une base de données permettant la lecture et l'ajout d'information sous forme d'une liste d'enregistrements chaînés appelés les blocks. Par construction, les systèmes de blockchain ne peuvent être falsifiés ou modifiés puisque chaque block contient un marqueur temporel couplé à un lien vers le block précédent [@bozic2016tutorial].
 La blockchain offre donc supposément l'assurance que les données ne peuvent être modifiées rétroactivement une fois enregistrées.
 
-Un tel consensus décentralisé peut être atteint à l'aide d'algorithmes tels que proof-of-work [@nakamoto2008bitcoin] (preuve de travail), proof-of-stake [@kiayias2017ouroboros] (preuve d'enjeu) ou un algorithmes dit tolérant aux fautes Byzanines (BFT) [@veronese2013efficient].
-Les blockchain peuvent être utilisées dans une grande variété de cas d'utilisation tels que les transactions financières comme Bitcoin, les dossier médicaux ou encore le contrôle des réseaux [@42].
+Un tel consensus décentralisé peut être atteint à l'aide d'algorithmes tels que proof-of-work [@nakamoto2008bitcoin] (preuve de travail), proof-of-stake [@kiayias2017ouroboros] (preuve d'enjeu) ou un algorithmes dit tolérant aux fautes Byzantines (BFT) [@veronese2013efficient].
+Les blockchain peuvent être utilisées dans une grande variété de cas d'utilisation tels que les transactions financières comme Bitcoin, les dossiers médicaux ou encore le contrôle des réseaux [@42].
 
 Les implémentations les plus répandues des blockchain, telle celle utilisée pour le réseau Bitcoin, ont démontré leur efficacité dans la gestion de transactions très simples, comme l'échange de devises. Néanmoins, le manque de moyen technique permettant une programmabilité extensible à d'autres cas d'utilisations plus complexes ont conduit au développement d'une nouvelle génération de blockchain. Celle-ci étend la sémantique des transactions au travers l'utilisation de "Smart Contracts" [@szabo1997idea].
 
@@ -56,33 +56,33 @@ En Juin 2016, une vulnérabilité dans son code a permis à des utilisateurs mal
 
 En Juillet 2016, la communauté Ethereum a décidé de revenir en arrière sur ces transactions délictueuses en les supprimant de ses registres. Dans la controverse, une partie de la communauté, opposée à ce "hard fork" continue de maintenir la blockchain Ethereum dans son état non modifié sous le nom d'Ethereum Classic. Les deux communautés s'opposent de façon quasi philosophique sur ce retour en arrière.
 
-* La communauté pro-fork **Ethereum** soutient que l'intentionnalité du smart contrat défectueux n'avait pas été respectés, et que les détenteurs de the DAO n'avait pas exprimés leur accord sur les transactions frauduleuses.
+* La communauté pro-fork **Ethereum** soutient que l'intentionnalité du smart contrat défectueux n'avait pas été respectée, et que les détenteurs  de theDao n’avaient pas exprimé leur accord sur les transactions frauduleuses.
 * La communauté anti-fork **Etherum Classic** soutient que le code contenu dans les smarts contracts représente le plus haut niveau de vérité, et qu'il fait loi (code is law). Ces représentants arguent également que la propriété d'immutabilité de la blockchain, sur laquelle repose la confiance des utilisateurs doit être garantie.
 
-Dans la suite de cet article, nous proposons un modèle pragmatique qui est un compromis entre les deux approches. D'une part, puisque qu'il est difficile aujourd'hui de prouver mathématiquement qu'un smart contrat ne peut être exploité par un utilisateur malveillant à des fins contraires à l'intentionnalité de l'auteur du contrat, nous proposons d'exprimer un ensemble d'invariant très simples, permettant de s'assurer que les cas limites ne peuvent entraîner d'exploitation abusive. D'autre part, nous proposons qu'une fois que les invariants ont été vérifiés, les transactions soit inscrites dans la blockchain de manière immuable.
+Dans la suite de cet article, nous proposons un modèle pragmatique qui est un compromis entre les deux approches. D'une part, puisqu'il est difficile aujourd'hui de prouver mathématiquement qu'un smart contrat ne peut être exploité par un utilisateur malveillant à des fins contraires à l'intentionnalité de l'auteur du contrat, nous proposons d'exprimer un ensemble d'invariant très simple, permettant de s'assurer que les cas limites ne peuvent entraîner d'exploitation abusive. D'autre part, nous proposons qu'une fois que les invariants ont été vérifiés, les transactions soient inscrites dans la blockchain de manière immuable.
 
 ## code is law vs code by law  ##
 
-Il s'agit d’envisager la possibilité de concevoir des Smart Contracts  « non directement et automatique imposables », en ajoutant au système un mécanisme d’appel ou d’arbitrage au stade de l’exécution du contrat.
+Il s'agit d’envisager la possibilité de concevoir des Smart Contracts  « non directement et automatiquement imposables », en ajoutant au système un mécanisme d’appel ou d’arbitrage au stade de l’exécution du contrat.
 Au-delà d’une réflexion sur les valeurs du cyberespace, à laquelle nous invite le constitutionnaliste américain Laurence Lessig depuis le début des années 2000, il y a un enjeu très pragmatique : comme ce fut le cas pour toute innovation du monde économique, depuis la monnaie scripturale à Airbnb, c’est sur la confiance que repose la capacité des smart contracts à se développer.
 
- En pratique, il existe deux voix essentielles et complémentaires afin d’assurer une bonne diffusion de cette nouvelle technologie : il faut tout d’abord travailler sur l’architecture du système, c'est-à-dire sur le code lui-même afin de sécuriser son fonctionnement et l’automatisation de ses fonctions. Il faut ensuite réfléchir à la manière dont le droit peut ou doit garantir les parties contractantes, non plus uniquement de la bonne exécution des engagements réciproques, mais de l’existence des conditions propres à garantir une bonne auto-exécution du contrat. Cela revient à adopter deux approches :
+ En pratique, il existe deux voies essentielles et complémentaires afin d’assurer une bonne diffusion de cette nouvelle technologie : il faut tout d’abord travailler sur l’architecture du système, c'est-à-dire sur le code lui-même afin de sécuriser son fonctionnement et l’automatisation de ses fonctions. Il faut ensuite réfléchir à la manière dont le droit peut ou doit garantir les parties contractantes, non plus uniquement de la bonne exécution des engagements réciproques, mais de l’existence des conditions propres à garantir une bonne auto-exécution du contrat. Cela revient à adopter deux approches :
 une première, « code is law », qui tire les conséquences du fait que pour tout système numérique, c’est d’abord sa conception qui régule son fonctionnement ;
 une seconde, « code by law », qui s’interroge sur la capacité du droit à investir ce système afin d’y exercer son pouvoir normateur.
 
 # Code is Law #
 
-Les smarts contract sont généralement écrits à l'aide de langages de programmation non spécialisés [@documents:dannen2017introducing] [@documents:androulaki2018hyperledger] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
+Les smart contracts sont généralement écrits à l'aide de langages de programmation non spécialisés [@documents:dannen2017introducing] [@documents:androulaki2018hyperledger] afin de permettre au développeur les réalisant une productivité similaire au développement d'applications traditionnelles.
 On peut concevoir les smart contracts comme l’exécution de code déterministe ayant comme entrée un état donné de la blockchain et produisant des sorties également inscrites dans la blockchain.
 Entrées et sorties peuvent être considérées comme un ensemble de valeurs rattachées à un compte utilisateur, les contrats permettant de transférer des valeurs d'un compte à un autre.
 
-Face aux difficultés de sécuriser les smarts contracts par la production de preuves [@cites_as_evidence:bhargavan2016formal] [@cites_as_evidence:hirai2017defining] ou par l'emploi de chasseur de prime pour détecter les exploitations possibles des anomalies des smart-contracts  [@cites_as_evidence:breidenbach2018enter] , nous proposons une approche complémentaire basée sur l'encapsulation des smart contracts dans des *containers d'exécution arbitraux* (CEA), présenté Figure \ref{cea} possédant différentes propriété que nous allons décrire.
+Face aux difficultés de sécuriser les smart contracts par la production de preuves [@cites_as_evidence:bhargavan2016formal] [@cites_as_evidence:hirai2017defining] ou par l'emploi de chasseur de prime pour détecter les exploitations possibles des anomalies des smart contracts  [@cites_as_evidence:breidenbach2018enter] , nous proposons une approche complémentaire basée sur l'encapsulation des smart contracts dans des *containers d'exécution arbitraux* (CEA), présenté Figure \ref{cea} possédant différentes propriétés que nous allons décrire.
 
 ![Encapsulation du smart contract dans son container d'exécution\label{cea}](cea.svg){ width=50% }
 
 ## Containers d'Exécution Arbitraux ##
 
-Premièrement, l'exécution du smart contract dans le CEA reste similaires aux smart contacts classiques. Ils accèdent aux même données, et leur résultats sont également stockés dans la blockchain. Tout code exécuté dans le container avec les mêmes conditions initiales doit aboutir au même état de sortie.
+Premièrement, l'exécution du smart contract dans le CEA reste similaire aux smart contacts classiques. Ils accèdent aux même données, et leur résultats sont également stockés dans la blockchain. Tout code exécuté dans le container avec les mêmes conditions initiales doit aboutir au même état de sortie.
 La principale différence entre le contrat exécuté directement dans la blockchain et le contrat rattaché à un CEA est que le CEA ajoute  une série d'invariants concernant les entrées et sorties des contrats.
 Ainsi, le CEA consiste en un  environnement d'exécution de plus haut niveau que le contrat initial, permettant de vérifier si certains invariants exprimables en fonction des paramètres d'entrée et de sortie sont vérifiés lors de l'exécution du contrat, comme montré sur la Figure~\ref{execution_workflow}.
 ![Exécution d'un Smart Sontract encapsulé permettant la vérification des invariants\label{execution_workflow}](execution_workflow.svg){ width=100% }
@@ -97,23 +97,25 @@ En cas de violation des invariants du CEA, le résultat associé, appelé *résu
 
 ## Procédure d'Arbitrage ##
 
-La procédure d'Arbitrage permet aux parties prenantes de contester les résultats de l'exécution d'un contrat sans altérer les propriété d'immutabilité de la blockchain. En effet, les résultats transactionnels, avant d'être déclaré *opposables* peuvent faire l'objet d'un appel permettant d'aboutir à 3 résultats différents, illustré Figure~\ref{arbitrage_workflow}
-![Exécution de la procédure d'arbitrage \label{arbitrage_workflow}](arbitrage_workflow.svg){ width=100% }
-* Si aucune partie prenante ne souhaite faire appel de l'exécution initiale du contrat, le mécanisme d'arbitrage contourne la violation des invariants. Les conditions initiales du contrat sont validées et les résultats sont inscrit directement sur la blockchain et sont décrétés *opposables*.
-* Si une partie prenante fait appel à un arbitrage, deux cas de figure peuvent intervenir:  l'arbitrage   peut invalider l'exécution du contrat, jugeant que la violation des invariants est contraire à *l'esprit initial* du contrat. Dans ce cas, le résultat transactionnel est déclaré non écrit, et les ressources dépensées par les parties prenantes dans le cadre de l'exécution du contrat initial sont restituées conformément à la procédure d'arbitrage [^footnote2].
-Dans le cas contraire,l'arbitrage peut être rendu en conformité avec l'exécution initiale. Dans ce cas, le résultat transactionnel devient un résultat *opposable* et est écrit en tant que tel sur la blockchain.
+La procédure d'Arbitrage permet aux parties prenantes de contester les résultats de l'exécution d'un contrat sans altérer les propriétés d'immutabilité de la blockchain. En effet, les résultats transactionnels, avant d'être déclarés *opposables* peuvent faire l'objet d'un appel permettant d'aboutir à 3 résultats différents, illustré Figure \ref{arbitrage_workflow}
 
-[^footnote2]: L'arbitrage pouvant précisé par exemple l'annulation pure et simple des transactions ou l'application de pénalités, amendant le transfert de valeur initial.
+![Exécution de la procédure d'arbitrage \label{arbitrage_workflow}](arbitrage_workflow.svg){width=100%}
 
-Le CEA joue le rôle dépôt fiduciaire, qui ne procède au déblocage des valeurs que lorsque les résultats du smart contrats deviennent opposables.
+* Si aucune partie prenante ne souhaite faire appel de l'exécution initiale du contrat, le mécanisme d'arbitrage contourne la violation des invariants. Les conditions initiales du contrat sont validées et les résultats sont inscrits directement sur la blockchain et sont décrétés *opposables*.
+* Si une partie prenante fait appel à un arbitrage, deux cas de figure peuvent intervenir:  l'arbitrage peut invalider l'exécution du contrat, jugeant que la violation des invariants est contraire à *l'esprit initial* du contrat. Dans ce cas, le résultat transactionnel est déclaré non écrit, et les ressources dépensées par les parties prenantes dans le cadre de l'exécution du contrat initial sont restituées conformément à la procédure d'arbitrage [^footnote2].
+Dans le cas contraire, l'arbitrage peut être rendu en conformité avec l'exécution initiale. Dans ce cas, le résultat transactionnel devient un résultat *opposable* et est écrit en tant que tel sur la blockchain.
+
+[^footnote2]: L'arbitrage pouvant précisé par exemple l'annulation pure et simple des transactions ou l'application de pénalités, amendant le transfert de valeur initiale.
+
+Le CEA joue le rôle dépôt fiduciaire, qui ne procède au déblocage des valeurs que lorsque les résultats du smart contrat deviennent opposables.
 
 ## Exemple du TheMcDAO ##
 
 Afin d'illustrer l'utilisation des CEA et de la procédure d'arbitrage, nous proposons un exemple basé sur une solution de livraison de repas à domicile basée sur la blockchain: theMcDAO.
 
-Une entreprise autonome theMcDAO propose la livraison de repas à domicile, directement basé sur la blockchain.
-Le service est basé sur la collaboration de 4 acteurs différents qui vont entrer en jeu pour livrer un hamburger chaud à un client, au meilleur prix.
-Le premier type d'acteur est le client. Celui-ci spécifie le menu de son choix, basé sur la carte d'une franchise de restauration rapide. Il spécifie également le délai de livraison attendu dans une application mobile et procède au paiement dans une devise définie par la blockchain. Les valeurs sont stockée dans le CEA du contrat de livraison de repas, qui précise la répartition des paiement entre entre theMcDAO, le livreur et le restaurateur.
+Une entreprise autonome theMcDAO propose la livraison de repas à domicile, directement basée sur la blockchain.
+Le service s'appuie sur la collaboration de 4 acteurs différents qui vont entrer en jeu pour livrer un hamburger chaud à un client, au meilleur prix.
+Le premier type d'acteur est le client. Celui-ci spécifie le menu de son choix, basé sur la carte d'une franchise de restauration rapide. Il spécifie également le délai de livraison attendu dans une application mobile et procède au paiement dans une devise définie par la blockchain. Les valeurs sont stockée dans le CEA du contrat de livraison de repas, qui préci! M%%%%ù
 
 Dans un deuxième temps, la plateforme theMcDAO va choisir, parmi une liste de restaurateurs franchisés, celui qui propose de préparer la commande au meilleur prix et dans les délais impartis.
 Tous les restaurateurs déclarent leurs disponibilité et leur prix en temps réel à la plateforme. Dès lors que la commande est réceptionnée et préparée, le hamburger est placé dans une boite témoin spéciale, qui affiche un QRCode unique lorsque la température du contenant atteint une température inférieure à 40°C. Une fois tous les éléments prêts, le sac de transport est fermé et affiche alors un QRCode unique, flashé par le restaurateur. Celui-ci dépose la commande en attendant que le livreur vienne la chercher.
@@ -127,7 +129,7 @@ Dans ce scenario, le contrat lie le client, le restaurateur et le livreur. La li
 4. La boite témoin n'indique pas une température inférieure à la température cible.
 
 Si, dans les 5 minutes suivant sa livraison, le client n'a pas fait de remarque sur la qualité de sa commande, les devises sont définitivement acquises et distribuées par le contrat au restaurateur et au livreur.
-Dans le cas contraire, le client peut faire appel du contrat de livraison, en prouvant soit que (1) le repas lui a été livré en retard à l'aide de l'horodatage du livreur ou (2) le contenu de la commande est arrivé froid comme en témoigne la QR code affiché dans la boite témoin. Une fois transmise l'une ou l'autre des information à la procédure d'arbitrage, celle-ci pourra soit annuler toutes les transactions de valeurs pour cette commande, soit appliquer des pénalités au restaurateur ou au livreur.
+Dans le cas contraire, le client peut faire appel du contrat de livraison, en prouvant soit que (1) le repas lui a été livré en retard à l'aide de l'horodatage du livreur ou (2) le contenu de la commande est arrivé froid comme en témoigne la QR code affiché dans la boite témoin. Une fois transmise l'une ou l'autre des informations à la procédure d'arbitrage, celle-ci pourra soit annuler toutes les transactions de valeurs pour cette commande, soit appliquer des pénalités au restaurateur ou au livreur.
 
 ## Discussion ##
 
@@ -135,11 +137,11 @@ Le modèle que nous proposons permet de mieux cadrer deux cas où la validation 
 
 Premièrement, dans le cas où l'exécution du contrat dans le monde réel n'est pas conforme à la réalité des engagement pris par les parties prenantes d'un contrat. Dans ce cas, la procédure d'arbitrage doit statuer sur la violation *d'invariants exogènes* basé sur des oracles constitués de données hors-chaînes (c'est à dire non présentes dans la blockchain). Ces oracles visent à vérifier le bon déroulé des engagements réciproques pris par tous les acteurs. En découplant la gestion nominale (transfert de valeur) et la gestion conflictuelle supportée par un mécanisme d'arbitrage, nos propositions facilitent la lisibilité et la compréhension de l'exécution des contrats. A noter que l'arbitrage ne nécessite pas d'être entièrement automatisé, et peut supporter l'utilisation d'un oracle supplémentaire post-exécution, comme par exemple un expert humain.
 
-Un autre aspect prometteur de notre approche et également de pouvoir placer des invariants sur les entrées du contrat, mais également sur l'état au sens large de la blockchain lors du démarrage de l'exécution du contrat (c'est à dire non limité aux seuls états des parties prenantes). De tels *invariants endogènes*  pourraient porter par exemple sur le blocage d'un transfert de valeur trop importante (e.g. invariant de valeur absolue des transactions en jeux) ou l'exécution trop répétée d'un contrat (e.g. invariant de seuil de fréquence d'appel d'un contrat). Dans ce cas, la procédure d'arbitrage pourrait être de demander à d'autres parties prenantes de s'assurer de la validité des transactions en jeux *avant* que celles-ci devinent opposables, c'est à dire avant d'être contraint de violer l'immutabilité de la blockchain. Dans le cas de TheDAO, la communauté aurait pu valider (ou invalider) le transfert massif de fond vers des comptes frauduleux, comme ce qui a été fait a posteriori avec le hard-fork.
+Un autre aspect prometteur de notre approche et également de pouvoir placer des invariants sur les entrées du contrat, mais également sur l'état au sens large de la blockchain lors du démarrage de l'exécution du contrat (c'est à dire non limité aux seuls états des parties prenantes). De tels *invariants endogènes*  pourraient porter par exemple sur le blocage d'un transfert de valeur trop importante (e.g. invariant de valeur absolue des transactions en jeux) ou l'exécution trop répétée d'un contrat (e.g. invariant de seuil de fréquence d'appel d'un contrat). Dans ce cas, la procédure d'arbitrage pourrait être de demander à d'autres parties prenantes de s'assurer de la validité des transactions en jeux *avant* que celles-ci deviennent opposables, c'est à dire avant d'être contraint de violer l'immutabilité de la blockchain. Dans le cas de TheDAO, la communauté aurait pu valider (ou invalider) le transfert massif de fond vers des comptes frauduleux, comme ce qui a été fait a posteriori avec le hard-fork.
 
 Dans tous les cas, la nécessité de l'utilisation d'un procédure d'arbitrage doit relever de l'exception et non du fonctionnement nominal du système. En effet, le positionnement d'invariants trop restrictifs se déclenchant trop fréquemment restreindrait le débit des transactions publiées sur la blockchain en la surchargeant de contrats d'arbitrage et empêcherait l'utilisation de ressources placées dans des procédures d'appel faisant fonction de dépôt fiduciaire.
 
-Notons également que cette approche peut être également couplée à des procédures de vérifications formelles au niveau du contrat, de la procédure d'arbitrage, comme de la procédure de vérification des invariants.
+Notons également que cette approche peut être également couplée à des procédures de vérifications formelles au niveau du contrat, de la procédure d'arbitrage, ou de la procédure de vérification des invariants.
 
 # Code by Law #
 ## Réfutation de l'hypothèse du non-droit ##
