@@ -16,24 +16,31 @@ project:
 
 # Intro #
 
-Le terme de « Système », repris cinq fois dans le programme, est un terme qui a priori fait sens aussi bien pour les juristes que pour les « vrais » scientifiques. Malgré son absence dans notre glossaire, il devrait donc constituer un bon vecteur de convergences. Il n’est cependant pas certain que la notion fasse tout à fait sens de la même façon pour les uns et pour les autres.
-Ainsi, si dans le domaine du numérique on devrait accepter de retenir le système comme un « ensemble d’éléments qui dépendent réciproquement les uns des autres de manière à former un tout organisé », au sein de la doctrine juridique on s’arrêtera également et peut-être davantage sur une seconde acception qui voit dans le système un « ensemble d’idées logiquement solidaires et tendant à offrir une vue cohérente d’un objet ou d’un champ d’étude ».
-D’un côté le système est l’objet de la pensée, tandis que de l’autre il est une qualité de la pensée elle-même – pensée qui vise alors à la systématisation.
+Le terme de « Système » est un terme qui a priori fait sens aussi bien pour les juristes que pour les « vrais » scientifiques. Il devrait donc constituer un bon vecteur de convergences.
+Il n’est cependant pas certain que la notion fasse tout à fait sens de la même façon pour les uns et pour les autres.
+Ainsi, si dans le domaine du numérique on devrait accepter de retenir le système comme un « ensemble d’éléments qui dépendent réciproquement les uns des autres de manière à former un tout organisé » (Lalande, 1926 : 1097), au sein de la doctrine juridique on s’arrêtera également et peut-être davantage sur une seconde acception qui voit dans le système un « ensemble d’idées logiquement solidaires et tendant à offrir une vue cohérente d’un objet ou d’un champ d’étude » (id.).
+D’un côté le système est l’objet de la pensée, tandis que de l’autre il est une qualité de la pensée elle-même – pensée qui vise alors à la systématisation [^1].
 
-Quoiqu’il en soit de ces nuances, il me semble que la notion de système a soulevé lors de nos travaux préparatoires une même préoccupation chez les différents intervenants, qu’ils soient juristes ou scientifiques : celle de la confiance. Peut-on avoir confiance dans le système ? Que l’on appréhende le système construit par les algorithmes, en tant que tel, ou dans sa relation avec une pratique qu’il entend « disrupter », la mécanisation, l’automatisation, ou – plus globalement – la logicisation sont ou restent sources de méfiance.
+[^1]:  A dire vrai, il y a dans cette présentation des approches respectives de la science et du droit une forme de réduction puisque dans le champ juridique les deux acceptions de la notion de système sont connus. La question de savoir si c’est l’objet juridique en lui-même qui est organisé, ou si cette organisation est l’œuvre de son observateur est ainsi une question bien connue de la théorie du droit [@grzegorczyk2002ordre].
+
+Quoiqu’il en soit de ces nuances, il semble que la notion de système a soulevé lors de nos travaux préparatoires une même préoccupation chez les différents intervenants au premier atelier des convergences du droit et du numérique, qu’ils soient juristes ou scientifiques : celle de la confiance.
+Peut-on avoir confiance dans le système ? Que l’on appréhende le système construit par les algorithmes, en tant que tel, ou dans sa relation avec une pratique qu’il entend « disrupter », la mécanisation, l’automatisation, ou – plus globalement – la logicisation sont ou restent sources de méfiance.
 
 C’est ainsi à travers la double problématique de la fiabilité et de la sincérité que nous avons décidé de converger à propos d’un objet d’intérêt commun, les systèmes Blockchain.
-Il s’agissait pour le juriste d’adopter une approche critique suivi de longue date par la recherche en informatique visant à démythifier le caractère infaillible comme l’objectivité des systèmes informatisés.
+Il s’agissait pour le juriste d’adopter une approche critique suivie de longue date par la recherche en informatique visant à démythifier le caractère infaillible comme l’objectivité des systèmes informatisés.
 
 Il existe un terme qui exprime très bien cela : celui de « système inéquitable numérique ». Le « SIN » a pour objet de désigner un système qui pêche par ce qu’il fait peser le coût de certains dysfonctionnements sur l’utilisateur – lequel sera évidemment la partie juridiquement et économiquement faible en cas de litige [^litige]
 
 [^litige]: Il est possible de prendre un exemple topique avec le cas du défaut de validation d’un titre de transport : l’utilisateur ne peut pas prouver qu’il a bien entendu le composteur biper à la présentation de sa carte numérique.
 
-Dans certains cas, c’est au législateur qu’il est revenu d’intervenir pour rétablir l’équité face au système. En vertu de la loi, c’est ainsi à la banque d’assumer l’essentiel des risques liés à l’utilisation de la carte bancaire (même en absence d’opposition, la responsabilité de l’utilisateur est limitée à 150 euros en vertu de l’art. L 133-19 du Code mon. et fin.).
+Dans certains cas, c’est au législateur qu’il est revenu d’intervenir pour rétablir l’équité face au système.
+En vertu de la loi, c’est ainsi à la banque d’assumer l’essentiel des risques liés à l’utilisation de la carte bancaire (même en absence d’opposition, la responsabilité de l’utilisateur est limitée à 150 euros en vertu de l’art. L 133-19 du Code mon. et fin.).
 
 # Confiance dans les systèmes blockchain #
 
-Compte tenu du rôle de plus en plus prépondérant des solutions Blockchain dans l'organisation de la vie économique et sociale,  nous avons souhaité investir notre travail dans la question de la fiabilité et de la sincérité de ce type de système.
+Compte tenu du rôle de plus en plus prépondérant des solutions Blockchain dans l’organisation de la vie économique et sociale, de leurs potentialités et de leurs risques[^lagarde], nous avons souhaité investir notre travail dans la question de la fiabilité et de la sincérité de ce type de système.
+
+[^lagarde]: dernièrement soulignés par Christine Lagarde en sa qualité de directrice du FMI : https://blogs.imf.org/2018/04/16/
 
 ## Présentation de la blockchain ##
 
