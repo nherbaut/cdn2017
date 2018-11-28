@@ -97,11 +97,7 @@ En cas de violation des invariants du CEA, le résultat associé, appelé *résu
 
 ## Procédure d'Arbitrage ##
 
-La procédure d'Arbitrage permet aux parties prenantes de contester les résultats de l'exécution d'un contrat sans altérer les propriété d'immutabilité de la blockchain. En effet, les résultats transactionnels, avant d'être déclaré *opposables* peuvent faire l'objet d'un appel permettant d'aboutir à 3 résultats différents, illustré Figure~\ref{arbitrage_workflow}
-![Exécution de la procédure d'arbitrage \label{arbitrage_workflow}](arbitrage_workflow.svg){ width=100% }
-* Si aucune partie prenante ne souhaite faire appel de l'exécution initiale du contrat, le mécanisme d'arbitrage contourne la violation des invariants. Les conditions initiales du contrat sont validées et les résultats sont inscrit directement sur la blockchain et sont décrétés *opposables*.
-* Si une partie prenante fait appel à un arbitrage, deux cas de figure peuvent intervenir:  l'arbitrage   peut invalider l'exécution du contrat, jugeant que la violation des invariants est contraire à *l'esprit initial* du contrat. Dans ce cas, le résultat transactionnel est déclaré non écrit, et les ressources dépensées par les parties prenantes dans le cadre de l'exécution du contrat initial sont restituées conformément à la procédure d'arbitrage [^footnote2].
-Dans le cas contraire,l'arbitrage peut être rendu en conformité avec l'exécution initiale. Dans ce cas, le résultat transactionnel devient un résultat *opposable* et est écrit en tant que tel sur la blockchain.
+La procédure d'Arbitrage permet aux parties prenantes de contester les résultats de l'exécution d'un contrat sans altérer les propriétés d'immutabilité de la blockchain. En effet, les résultats transactionnels, avant d'être déclarés *opposables* peuvent faire l'objet d'un appel permettant d'aboutir à 3 résultats différents, illustré Figure \ref{arbitrage_workflow}
 
 [^footnote2]: L'arbitrage pouvant précisé par exemple l'annulation pure et simple des transactions ou l'application de pénalités, amendant le transfert de valeur initial.
 
