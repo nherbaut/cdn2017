@@ -12,9 +12,11 @@ author:
 bibliography: cdn/bibliography.bib
 project:
   title:  Fiabilité et sincérité des systèmes blockchain
+  maintainer: Nicolas Herbaut nicolas.herbaut@univ-paris1.fr
+classoption: twocolumn
 ...
 
-# Intro #
+# Introduction #
 
 Le terme de "Système" est un terme qui a priori fait sens aussi bien pour les juristes que pour les "vrais" scientifiques. Il devrait donc constituer un bon vecteur de convergences.
 Il n'est cependant pas certain que la notion fasse tout à fait sens de la même façon pour les uns et pour les autres.
